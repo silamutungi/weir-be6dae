@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1E40AF;
+  --color-accent: #0D9488;
+  --color-bg: #F8FAFC;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-muted: #FFFFFF;
+  --color-text: #0F172A;
+  --color-text-secondary: rgba(15, 23, 42, 0.64);
+  --color-text-muted: rgba(15, 23, 42, 0.64);
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-accent-hover: #0D9488;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-info: #2563eb;
+  --font-primary: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --text-large-title: 2.125rem;
+  --text-title-1: 1.75rem;
+  --text-title-2: 1.375rem;
+  --text-title-3: 1.25rem;
+  --text-headline: 1.0625rem;
+  --text-body: 1.0625rem;
+  --text-callout: 1rem;
+  --text-subhead: 0.9375rem;
+  --text-footnote: 0.8125rem;
+  --text-caption: 0.75rem;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --tracking-display: 0.012em;
+  --tracking-title: 0em;
+  --tracking-body: -0.025em;
+  --tracking-caption: 0em;
+  --tracking-overline: 0.08em;
+  --leading-tight: 1.2;
+  --leading-normal: 1.3;
+  --leading-relaxed: 1.5;
+  --leading-loose: 1.6;
+
+  /* shadcn/ui tokens */
+  --background: 210 40% 98%;
+  --foreground: 222 84% 5%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 84% 5%;
+  --primary: 217 91% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 174 72% 32%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 217 91% 40%;
+  --radius: 0.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #3B82F6;
+    --color-accent: #14B8A6;
+    --color-bg: #0C1628;
+    --color-bg-surface: #1A2332;
+    --color-bg-muted: #1A2332;
+    --color-text: #F1F5F9;
+    --color-text-secondary: rgba(241, 245, 249, 0.72);
+    --color-text-muted: rgba(241, 245, 249, 0.72);
+    --color-border: rgba(241, 245, 249, 0.15);
+    --color-accent-hover: #14B8A6;
+    --color-success: #4ade80;
+    --color-warning: #fbbf24;
+    --color-error: #f87171;
+    --color-info: #60a5fa;
+
+    --background: 220 47% 11%;
+    --foreground: 213 31% 91%;
+    --card: 220 39% 15%;
+    --card-foreground: 213 31% 91%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 222 47% 20%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 222 47% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 174 72% 46%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 63% 65%;
+    --destructive-foreground: 222 84% 5%;
+    --border: 220 30% 25%;
+    --input: 220 30% 25%;
+    --ring: 217 91% 60%;
+  }
+
+  img:not([src*=".svg"]) {
+    filter: brightness(0.9);
+  }
+}
+
+html {
+  color-scheme: light dark;
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100dvh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.card-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+.transition-base {
+  transition: all 200ms ease;
+}
